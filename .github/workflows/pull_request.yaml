@@ -1,0 +1,30 @@
+name: Pull Request
+on:
+  pull_request:
+    branches: 
+      - master
+
+jobs:
+  build:
+    name: Build App
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build
+        run: echo BUILD_OK
+  
+  test:
+    name: Test App
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test
+        run: echo TEST_OK
+
+  push:
+    name: Push Image
+    runs-on: ubuntu-latest
+    steps:
+      - name: Docker Build
+        run: echo DOCKER_BUILD_OK
+
+      - name: Docker Push to Registry
+        run: echo DOCKER_PUSH_OK
