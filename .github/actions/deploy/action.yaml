@@ -1,0 +1,16 @@
+name: "Deploy"
+description: "Deploy Steps"
+runs:
+  using: "composite"
+  steps:  
+    - name: Install Kubectl
+      shell: bash
+      run: echo KUBECTL_OK
+    
+    - name: Install Helm
+      shell: bash
+      run: echo KUBECTL_OK
+    
+    - name: Helm Upgrade
+      shell: bash
+      run: echo HELM_UPGRADE_OK
