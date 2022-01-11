@@ -8,17 +8,11 @@ jobs:
     name: Build App
     runs-on: ubuntu-latest
     steps:
+      - name: "Checkout"
+        uses: actions/checkout@master    
+
       - name: Build
-        run: echo BUILD_OK
-
-      - name: Test
-        run: echo TEST_OK
-
-      - name: Docker Build
-        run: echo DOCKER_BUILD_OK
-
-      - name: Docker Push to Registry
-        run: echo DOCKER_PUSH_OK
+        uses: ./.github/actions/build
   
   deploy:
     name: Deploy Production
@@ -27,11 +21,8 @@ jobs:
     environment:
       name: production-approver
     steps:
-      - name: Install Kubectl
-        run: echo KUBECTL_OK
-      
-      - name: Install Helm
-        run: echo KUBECTL_OK
-      
-      - name: Helm Upgrade
-        run: echo HELM_UPGRADE_OK
+      - name: "Checkout"
+        uses: actions/checkout@master  
+
+      - name: Deploy
+        uses: ./.github/actions/deploy
