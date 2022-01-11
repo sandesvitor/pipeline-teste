@@ -1,0 +1,20 @@
+name: "Build"
+description: "Build Steps"
+runs:
+  using: "composite"
+  steps:
+    - name: Build
+      shell: bash
+      run: echo BUILD_OK
+
+    - name: Test
+      shell: bash
+      run: echo TEST_OK
+
+    - name: Docker Build
+      shell: bash
+      run: echo DOCKER_BUILD_OK
+
+    - name: Docker Push to Registry
+      shell: bash
+      run: echo DOCKER_PUSH_OK
