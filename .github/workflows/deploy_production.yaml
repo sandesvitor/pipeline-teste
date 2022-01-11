@@ -21,7 +21,7 @@ jobs:
         run: echo DOCKER_PUSH_OK
   
   deploy:
-    name: Deploy Staging
+    name: Deploy Production
     runs-on: ubuntu-latest
     needs: [build]
     steps:
