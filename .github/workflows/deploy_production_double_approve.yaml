@@ -1,4 +1,4 @@
-name: Deploy Production
+name: Deploy Production - Double Approve
 on:
   release:
     types: [published]
