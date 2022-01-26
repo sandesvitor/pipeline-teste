@@ -1,5 +1,5 @@
 name: "Build"
-description: "Build Steps"
+description: "Build Steps for Application"
 runs:
   using: "composite"
   steps:
