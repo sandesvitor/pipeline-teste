@@ -1,37 +1,37 @@
-name: Deploy Production
-on:
-  release:
-    types: [published]
+# name: Deploy Production
+# on:
+#   release:
+#     types: [published]
 
-jobs:
-  build:
-    name: Build App
-    runs-on: ubuntu-latest
-    steps:
-      - name: Build
-        run: echo BUILD_OK
+# jobs:
+#   build:
+#     name: Build App
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Build
+#         run: echo BUILD_OK
 
-      - name: Test
-        run: echo TEST_OK
+#       - name: Test
+#         run: echo TEST_OK
 
-      - name: Docker Build
-        run: echo DOCKER_BUILD_OK
+#       - name: Docker Build
+#         run: echo DOCKER_BUILD_OK
 
-      - name: Docker Push to Registry
-        run: echo DOCKER_PUSH_OK
+#       - name: Docker Push to Registry
+#         run: echo DOCKER_PUSH_OK
   
-  deploy:
-    name: Deploy Production
-    runs-on: ubuntu-latest
-    needs: [build]
-    environment:
-      name: production-approver
-    steps:
-      - name: Install Kubectl
-        run: echo KUBECTL_OK
+#   deploy:
+#     name: Deploy Production
+#     runs-on: ubuntu-latest
+#     needs: [build]
+#     environment:
+#       name: production-approver
+#     steps:
+#       - name: Install Kubectl
+#         run: echo KUBECTL_OK
       
-      - name: Install Helm
-        run: echo KUBECTL_OK
+#       - name: Install Helm
+#         run: echo KUBECTL_OK
       
-      - name: Helm Upgrade
-        run: echo HELM_UPGRADE_OK
+#       - name: Helm Upgrade
+#         run: echo HELM_UPGRADE_OK
